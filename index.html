@@ -139,7 +139,7 @@ let facingMode = "environment";
 let frameTimes = [];
 
 // Umbral mínimo de confianza para considerar una detección válida
-const MIN_SCORE = 0.5;
+const MIN_SCORE = 0.3;
 // Clase objetivo a seguir (coco-ssd usa nombres en inglés)
 const TARGET_CLASS = "bottle";
 
@@ -172,7 +172,7 @@ async function startCamera() {
       stream.getTracks().forEach(t => t.stop());
     }
     stream = await navigator.mediaDevices.getUserMedia({
-      video: { facingMode: facingMode, width: { ideal: 640 }, height: { ideal: 480 } },
+      video: { facingMode: facingMode, width: { ideal: 1280 }, height: { ideal: 720 } },
       audio: false
     });
     video.srcObject = stream;
